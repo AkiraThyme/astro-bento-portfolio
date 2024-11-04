@@ -7,19 +7,19 @@ export function getCurrentTimeInItaly(): Date {
   const now = new Date();
 
   // Convert the UTC time to Italy's time
-  const offsetItaly = 2; // Italy is in Central European Summer Time (UTC+2), but you might need to adjust this based on Daylight Saving Time
-  now.setHours(now.getUTCHours() + offsetItaly);
+  const offsetPhilippines = 8; // Italy is in Central European Summer Time (UTC+2), but you might need to adjust this based on Daylight Saving Time
+  now.setHours(now.getUTCHours() + offsetPhilippines);
 
   return now;
 }
 
-export function formatTimeForItaly(date: Date): string {
+export function formatTimeForPH(date: Date): string {
   const options: Intl.DateTimeFormatOptions = {
     hour: "numeric",
     minute: "2-digit",
     second: "2-digit",
     hour12: true, // This will format the time in 12-hour format with AM/PM
-    timeZone: "Europe/Rome",
+    timeZone: "Asia/Manila",
   };
 
   let formattedTime = new Intl.DateTimeFormat("en-US", options).format(date);
