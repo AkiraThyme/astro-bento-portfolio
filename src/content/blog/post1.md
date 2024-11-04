@@ -1,18 +1,21 @@
 ---
 layout: ../../layouts/LayoutBlogPost.astro
-title: "Hello, World"
-description: "this is a post example"
-pubDate: 2023-01-21
+title: "Web Payroll Management System"
+description: "This is an overview only for the Webapp"
+pubDate: 2023-11-04
 category: "intro"
+setup: |
+  import ImageSlider from '../../components/ImageSlider.astro';
 ---
 
 # Hi there!
 
-This Markdown file creates a page at `your-domain.com/post1/`
+Here is an image gallery for the project:
 
-It probably isn't styled much, but Markdown does support:
+<ImageSlider images={[
+  '/images/img1.png',
+  '/images/img2.png',
+  '/images/img3.png',
+]} />
 
-- **bold** and _italics._
-- lists
-- [links](https://astro.build)
-- and more!
+

@@ -1,0 +1,104 @@
+---
+// src/components/ImageSlider.astro
+
+export interface Props {
+  images: string[];
+}
+
+const { images } = Astro.props;
+---
+
+<div class="slider-container">
+  <button class="prev-button" onclick="prevSlide()">❮</button>
+
+  <div class="slider-wrapper">
+    <div class="slides" id="slides">
+      {images.map((image: string, index: number) => (
+        <div class="slide">
+          <img src={image} alt={`Slide ${index + 1}`} />
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <button class="next-button" onclick="nextSlide()">❯</button>
+</div>
+
+<style>
+/* Basic styling for the slider container */
+.slider-container {
+  position: relative;
+  max-width: 600px;
+  margin: auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* Styling for the slides wrapper */
+.slider-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Styling for the slides */
+.slides {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.slide img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Styling for navigation buttons */
+.prev-button,
+.next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.prev-button {
+  left: 10px;
+}
+
+.next-button {
+  right: 10px;
+}
+</style>
+
+<script>
+let currentSlide = 0;
+
+function showSlide(index: number) {
+  const slidesContainer = document.getElementById('slides');
+  if (!slidesContainer) return; // Handle potential null value
+
+  const totalSlides = slidesContainer.children.length;
+  currentSlide = (index + totalSlides) % totalSlides;
+  slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+}
+
+function prevSlide() {
+  showSlide(currentSlide - 1);
+}
+
+function nextSlide() {
+  showSlide(currentSlide + 1);
+}
+
+export { prevSlide, nextSlide };
+</script>
