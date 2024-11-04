@@ -4,16 +4,12 @@ title: "Web Payroll Management System"
 description: "This is an overview only for the Webapp"
 pubDate: 2023-01-21
 category: "intro"
-setup: |
-  import ImageSlider from '../../components/ImageSlider.astro';
 ---
 
 # Hi there!
 
 Here is an image gallery for the project:
 
-<ImageSlider images={[
-  '/images/img1.png',
-  '/images/img2.png',
-  '/images/img3.png'
-]} />
+![Image 1](/images/img1.png)
+![Image 2](/images/img2.png)
+![Image 3](/images/img3.png)
