@@ -58,8 +58,16 @@ import Globe from "../components/Globe";
       colSpan="md:col-span-1"
       rowSpan="md:row-span-2 flex gap-4"
       title="Websites"
-      href="/blog"
-    />
+      href="/websites"
+    >
+      <div class="absolute inset-0 -z-10 grid grid-cols-2 gap-2 p-2 opacity-90">
+        <img src="/images/img7.png" alt="Website highlight one" class="h-full w-full object-cover rounded-md" />
+        <img src="/images/img9.png" alt="Website highlight two" class="h-full w-full object-cover rounded-md" />
+        <img src="/images/img8.png" alt="Website highlight three" class="h-full w-full object-cover rounded-md col-span-2" />
+      </div>
+      <div class="absolute inset-0 -z-0 bg-gradient-to-t from-darkslate-700/90 via-darkslate-700/25 to-transparent"></div>
+      <p class="absolute bottom-4 left-6 text-sm text-neutral-200">Featured UI snapshots</p>
+    </Card>
     <Card colSpan="md:col-span-1" rowSpan="md:row-span-1">
       <p class="text-xs">
         © 2024 · Crafted with ♥️ using <a
