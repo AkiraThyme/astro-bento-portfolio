@@ -12,7 +12,7 @@ import { Icon } from "astro-icon/components";
     loaderAnimation,
     [
       ".website-card",
-      { opacity: [0, 1], y: [24, 0] },
+      { opacity: [0, 1], y: [24, 0], scale: [0.98, 1] },
       { at: "-0.2", duration: 0.45, delay: 0.08 },
     ],
   ];
@@ -34,17 +34,17 @@ import { Icon } from "astro-icon/components";
 
     <header class="mb-8">
       <p class="text-xs uppercase tracking-[0.2em] text-app-muted">Selected Work</p>
-      <h1 class="text-4xl font-bold mt-2">Websites</h1>
+      <h1 class="text-3xl sm:text-4xl font-bold mt-2">Websites</h1>
       <p class="text-app-muted mt-2 max-w-2xl">
         A visual collection of projects with emphasis on clean UI, image-forward
         presentation, and practical UX decisions.
       </p>
     </header>
 
-    <section class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    <section class="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
       {
         WEBSITE_PROJECTS.map((website) => (
-          <article class="website-card group rounded-xl border border-app-border bg-app-card overflow-hidden shadow-lg hover:border-primary-500 transition duration-200">
+          <article class="website-card group flex h-full flex-col rounded-xl border border-app-border bg-app-card overflow-hidden shadow-lg transition duration-300 hover:-translate-y-1 hover:border-primary-500 hover:shadow-primary-500/10">
             <div class="relative overflow-hidden">
               {website.featured && (
                 <span class="absolute top-3 left-3 z-10 rounded-full bg-primary-500 text-black text-xs font-bold px-3 py-1">
@@ -54,13 +54,15 @@ import { Icon } from "astro-icon/components";
               <img
                 src={website.image}
                 alt={`${website.title} preview`}
-                class="h-44 w-full object-cover transition duration-300 group-hover:scale-105"
+                class="h-44 w-full object-cover transition duration-500 group-hover:scale-105"
                 loading="lazy"
               />
             </div>
-            <div class="p-4">
-              <h2 class="text-lg font-semibold">{website.title}</h2>
+
+            <div class="flex h-full flex-col p-4">
+              <h2 class="text-lg font-semibold leading-snug">{website.title}</h2>
               <p class="text-sm text-app-muted mt-2 leading-relaxed">{website.description}</p>
+
               <ul class="flex flex-wrap gap-2 mt-4">
                 {website.tags.map((tag) => (
                   <li class="text-xs rounded-full border border-app-border px-2.5 py-1 text-app-muted">
@@ -68,33 +70,26 @@ import { Icon } from "astro-icon/components";
                   </li>
                 ))}
               </ul>
-              <div class="mt-4 flex gap-2">
-                <a
-                  href={website.codeUrl || "#"}
-                  target={website.codeUrl ? "_blank" : undefined}
-                  aria-disabled={!website.codeUrl}
-                  class={`inline-flex items-center gap-2 rounded-md border px-3 py-2 text-sm font-semibold transition ${
-                    website.codeUrl
-                      ? "border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-black"
-                      : "cursor-not-allowed border-neutral-500 text-neutral-400 bg-neutral-800/40"
-                  }`}
+
+              <div class="mt-5 grid grid-cols-2 gap-2 pt-1">
+                <button
+                  type="button"
+                  disabled
+                  aria-label="Code is locked"
+                  class="inline-flex items-center justify-center gap-2 rounded-md border border-neutral-500 px-3 py-2 text-sm font-semibold text-neutral-400 bg-neutral-800/40 cursor-not-allowed"
                 >
-                  <Icon name={website.codeUrl ? "ri:github-fill" : "ri:lock-line"} class="h-4 w-4" />
-                  Code
-                </a>
-                <a
-                  href={website.siteUrl || "#"}
-                  target={website.siteUrl?.startsWith("http") ? "_blank" : undefined}
-                  aria-disabled={!website.siteUrl}
-                  class={`inline-flex items-center gap-2 rounded-md border px-3 py-2 text-sm font-semibold transition ${
-                    website.siteUrl
-                      ? "border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-black"
-                      : "cursor-not-allowed border-neutral-500 text-neutral-400 bg-neutral-800/40"
-                  }`}
+                  <Icon name="ri:lock-line" class="h-4 w-4" />
+                  Code Locked
+                </button>
+                <button
+                  type="button"
+                  disabled
+                  aria-label="Site is locked"
+                  class="inline-flex items-center justify-center gap-2 rounded-md border border-neutral-500 px-3 py-2 text-sm font-semibold text-neutral-400 bg-neutral-800/40 cursor-not-allowed"
                 >
-                  <Icon name={website.siteUrl ? "ri:global-line" : "ri:lock-line"} class="h-4 w-4" />
-                  Site
-                </a>
+                  <Icon name="ri:lock-line" class="h-4 w-4" />
+                  Site Locked
+                </button>
               </div>
             </div>
           </article>
