@@ -11,33 +11,30 @@ export interface WebsiteProject {
 
 export const WEBSITE_PROJECTS: WebsiteProject[] = [
   {
-    title: "Portfolio & Bento UI",
+    title: "Antasis Web Based Payroll",
     description:
-      "Personal site focused on polished UI micro-interactions and performance.",
-    href: "/",
+      "Payroll management platform with role-based workflows and streamlined employee records.",
+    href: "/websites",
     image: "/images/img1.png",
-    tags: ["Astro", "UnoCSS", "Animation"],
-    codeUrl: "https://github.com/AkiraThyme/astro-bento-portfolio",
-    siteUrl: "/",
+    tags: ["React", "MySQL"],
     featured: true,
   },
   {
-    title: "Travel Globe",
+    title: "Customized AI IS Chat bot",
     description:
-      "Interactive 3D globe experience showing countries I visited.",
-    href: "/travel",
+      "Business-ready assistant built for internal support, response automation, and knowledge lookup.",
+    href: "/websites",
     image: "/images/img2.png",
-    tags: ["D3", "Canvas", "Data Viz"],
-    siteUrl: "/travel",
+    tags: ["Python", "Laravel", "LLM GPT AI"],
     featured: true,
   },
   {
-    title: "Websites Gallery",
+    title: "Simple CRUD",
     description:
-      "Showcase page for UI snapshots and web work grouped into clean, readable cards.",
+      "Clean CRUD application focused on practical forms, records management, and maintainable backend logic.",
     href: "/websites",
     image: "/images/img7.png",
-    tags: ["Gallery", "UI", "Responsive"],
-    siteUrl: "/websites",
+    tags: ["Laravel"],
+    featured: true,
   },
 ];
