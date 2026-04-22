@@ -24,7 +24,7 @@ export const WEBSITE_PROJECTS: WebsiteProject[] = [
     description:
       "Business-ready assistant built for internal support, response automation, and knowledge lookup.",
     href: "/websites",
-    image: "/images/img2.png",
+    image: "/images/img5.png",
     tags: ["Python", "Laravel", "LLM GPT AI"],
     featured: true,
   },

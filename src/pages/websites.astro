@@ -1,7 +1,6 @@
 ---
 import BasicLayout from "../layouts/BasicLayout.astro";
 import { WEBSITE_PROJECTS } from "../lib/websites";
-import { Icon } from "astro-icon/components";
 ---
 
 <script>
@@ -25,7 +24,7 @@ import { Icon } from "astro-icon/components";
   description="A curated selection of websites and UI work, with visual highlights and project details."
   page="websites"
 >
-  <main class="w-full max-w-6xl mx-auto px-4 py-8 md:px-6 md:py-10 text-app-fg">
+  <main class="w-full max-w-5xl mx-auto px-4 py-8 md:px-6 md:py-10 text-app-fg">
     <a
       href="/"
       class="inline-flex text-sm bg-app-card hover:opacity-85 mb-6 px-4 py-2 border border-solid border-app-border rounded-lg"
@@ -41,7 +40,9 @@ import { Icon } from "astro-icon/components";
       </p>
     </header>
 
-    <section class="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+    <section
+      class="grid grid-cols-[repeat(auto-fit,minmax(min(100%,18rem),1fr))] gap-5 items-stretch auto-rows-fr"
+    >
       {
         WEBSITE_PROJECTS.map((website) => (
           <article class="website-card group flex h-full flex-col rounded-xl border border-app-border bg-app-card overflow-hidden shadow-lg transition duration-300 hover:-translate-y-1 hover:border-primary-500 hover:shadow-primary-500/10">
@@ -75,20 +76,18 @@ import { Icon } from "astro-icon/components";
                 <button
                   type="button"
                   disabled
-                  aria-label="Code is locked"
-                  class="inline-flex items-center justify-center gap-2 rounded-md border border-neutral-500 px-3 py-2 text-sm font-semibold text-neutral-400 bg-neutral-800/40 cursor-not-allowed"
+                  aria-label="Code access unavailable"
+                  class="inline-flex items-center justify-center rounded-md border border-red-500/70 px-3 py-2 text-sm font-semibold text-red-300 bg-red-500/10 cursor-not-allowed"
                 >
-                  <Icon name="ri:lock-line" class="h-4 w-4" />
-                  Code Locked
+                  Code
                 </button>
                 <button
                   type="button"
                   disabled
-                  aria-label="Site is locked"
-                  class="inline-flex items-center justify-center gap-2 rounded-md border border-neutral-500 px-3 py-2 text-sm font-semibold text-neutral-400 bg-neutral-800/40 cursor-not-allowed"
+                  aria-label="Site access unavailable"
+                  class="inline-flex items-center justify-center rounded-md border border-green-500/70 px-3 py-2 text-sm font-semibold text-green-300 bg-green-500/10 cursor-not-allowed"
                 >
-                  <Icon name="ri:lock-line" class="h-4 w-4" />
-                  Site Locked
+                  Site
                 </button>
               </div>
             </div>

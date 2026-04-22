@@ -36,7 +36,7 @@ import Globe from "../components/Globe";
   description="I'm a developer based in Philippines, passionate about backend and new Technologies. My primary tools of choice include: JavaScript, React, Laravel PHP, Astro, TailwindCSS, and Node.js."
 >
   <main
-    class="text-app-fg m-auto p-2 grid gap-2 max-w-6xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:grid-cols-2 md:gap-3 md:p-6 lg:grid-rows-8 lg:grid-cols-4 lg:gap-4"
+    class="text-app-fg m-auto p-2 grid gap-2 max-w-4xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:gap-3 md:p-6 lg:max-w-6xl lg:grid-cols-4 lg:auto-rows-[minmax(120px,auto)] lg:grid-flow-dense lg:gap-4"
   >
     <IntroCard />
     <AboutMe />
@@ -44,8 +44,8 @@ import Globe from "../components/Globe";
     <TimeZone />
     <Now />
     <Card
-      colSpan="md:col-span-1"
-      rowSpan="md:row-span-1"
+      colSpan="lg:col-span-1"
+      rowSpan="lg:row-span-1"
       title="Countries I visited"
       href="travel"
       colorText="text-neutral-900"
@@ -55,8 +55,8 @@ import Globe from "../components/Globe";
       </div>
     </Card>
     <Card
-      colSpan="md:col-span-1"
-      rowSpan="md:row-span-2 flex gap-4"
+      colSpan="lg:col-span-2"
+      rowSpan="lg:row-span-2 flex gap-4"
       title="Websites"
       href="/websites"
     >
@@ -68,7 +68,7 @@ import Globe from "../components/Globe";
       <div class="absolute inset-0 -z-0 bg-gradient-to-t from-darkslate-700/90 via-darkslate-700/25 to-transparent"></div>
       <p class="absolute bottom-4 left-6 text-sm text-neutral-200">Featured UI snapshots</p>
     </Card>
-    <Card colSpan="md:col-span-1" rowSpan="md:row-span-1">
+    <Card colSpan="lg:col-span-1" rowSpan="lg:row-span-1">
       <p class="text-xs">
         © 2024 · Crafted with ♥️ using <a
           href="https://astro.build/"
