@@ -1,0 +1,144 @@
+---
+import BasicLayout from "../layouts/BasicLayout.astro";
+import { WEBSITE_PROJECTS } from "../lib/websites";
+import { Icon } from "astro-icon/components";
+---
+
+<script>
+  import { timeline, type TimelineDefinition } from "motion";
+  import { loaderAnimation } from "../lib/constants";
+
+  const sequence = [
+    loaderAnimation,
+    [
+      ".website-card",
+      { opacity: [0, 1], y: [18, 0] },
+      { at: "-0.2", duration: 0.4, delay: 0.08 },
+    ],
+  ];
+
+  timeline(sequence as TimelineDefinition);
+</script>
+
+<BasicLayout
+  title="Jerold Arranzado - Websites"
+  description="A curated selection of website work with screenshots, code links, and live site links."
+  page="websites"
+>
+  <main class="w-full max-w-6xl mx-auto px-4 py-8 md:px-6 md:py-10">
+    <a href="/" class="nav-btn mb-6 inline-flex items-center gap-2">← Back</a>
+
+    <header class="mb-8">
+      <p class="text-xs uppercase tracking-[0.2em] text-[var(--muted-color)]">Selected Work</p>
+      <h1 class="text-4xl font-bold mt-2">Websites</h1>
+      <p class="text-[var(--muted-color)] mt-2 max-w-2xl">
+        Three featured projects with visual previews and direct actions for source code
+        and live deployment.
+      </p>
+    </header>
+
+    <section class="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+      {
+        WEBSITE_PROJECTS.map((website) => (
+          <article class="website-card card group rounded-xl overflow-hidden shadow-lg transition duration-200">
+            <div class="relative overflow-hidden border-b border-[var(--border-color)]">
+              {website.featured && (
+                <span class="absolute top-3 left-3 z-10 rounded-full bg-primary-500 text-black text-xs font-bold px-3 py-1">
+                  Highlight
+                </span>
+              )}
+              <img
+                src={website.image}
+                alt={`${website.title} preview`}
+                class="h-44 w-full object-cover transition duration-300 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="p-4">
+              <h2 class="text-lg font-semibold">{website.title}</h2>
+              <p class="text-sm text-[var(--muted-color)] mt-2 leading-relaxed min-h-[3.6rem]">
+                {website.description}
+              </p>
+              <ul class="flex flex-wrap gap-2 mt-4">
+                {website.tags.map((tag) => (
+                  <li class="text-xs rounded-full border border-[var(--border-color)] px-2.5 py-1">
+                    {tag}
+                  </li>
+                ))}
+              </ul>
+
+              <div class="mt-5 grid grid-cols-2 gap-2">
+                {website.githubUrl ? (
+                  <a href={website.githubUrl} target="_blank" rel="noreferrer" class="action-btn action-btn-active">
+                    <Icon name="ri:github-fill" class="h-4 w-4" /> Code
+                  </a>
+                ) : (
+                  <button class="action-btn action-btn-disabled" disabled>
+                    <Icon name="ri:lock-2-line" class="h-4 w-4" /> Code
+                  </button>
+                )}
+
+                {website.siteUrl ? (
+                  <a href={website.siteUrl} target="_blank" rel="noreferrer" class="action-btn action-btn-active">
+                    <Icon name="ri:global-line" class="h-4 w-4" /> Site
+                  </a>
+                ) : (
+                  <button class="action-btn action-btn-disabled" disabled>
+                    <Icon name="ri:lock-2-line" class="h-4 w-4" /> Site
+                  </button>
+                )}
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </section>
+  </main>
+</BasicLayout>
+
+<style>
+  .nav-btn,
+  .action-btn {
+    border: 1px solid var(--border-color);
+    border-radius: 0.6rem;
+    transition: 0.2s ease;
+  }
+
+  .nav-btn {
+    padding: 0.5rem 0.85rem;
+    background: var(--card-bg);
+    color: var(--text-color);
+  }
+
+  .nav-btn:hover {
+    border-color: #e63946;
+  }
+
+  .action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.5rem;
+  }
+
+  .action-btn-active {
+    background: transparent;
+    color: var(--text-color);
+  }
+
+  .action-btn-active:hover {
+    border-color: #e63946;
+    color: #e63946;
+  }
+
+  .action-btn-disabled {
+    background: #64646433;
+    color: #8a8a8a;
+    cursor: not-allowed;
+    border-color: #8a8a8a66;
+  }
+</style>
