@@ -40,10 +40,10 @@ import { WEBSITE_PROJECTS } from "../lib/websites";
       </p>
     </header>
 
-    <section class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <section class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 items-start">
       {
         WEBSITE_PROJECTS.map((website) => (
-          <article class="website-card group flex h-[36rem] flex-col rounded-xl border border-app-border bg-app-card overflow-hidden shadow-lg transition duration-300 hover:-translate-y-1 hover:border-primary-500 hover:shadow-primary-500/10 sm:h-[34rem]">
+          <article class="website-card group flex h-full flex-col rounded-xl border border-app-border bg-app-card overflow-hidden shadow-lg transition duration-300 hover:-translate-y-1 hover:border-primary-500 hover:shadow-primary-500/10">
             <div class="relative overflow-hidden">
               {website.featured && (
                 <span class="absolute top-3 left-3 z-10 rounded-full bg-primary-500 text-black text-xs font-bold px-3 py-1">
@@ -58,7 +58,7 @@ import { WEBSITE_PROJECTS } from "../lib/websites";
               />
             </div>
 
-            <div class="flex h-full flex-col p-4">
+            <div class="flex flex-1 flex-col p-4">
               <h2 class="text-lg font-semibold leading-snug line-clamp-2">{website.title}</h2>
               <p class="text-sm text-app-muted mt-2 leading-relaxed line-clamp-3">
                 {website.description}
@@ -72,7 +72,7 @@ import { WEBSITE_PROJECTS } from "../lib/websites";
                 ))}
               </ul>
 
-              <div class="mt-auto grid grid-cols-2 gap-2 pt-5">
+              <div class="grid grid-cols-2 gap-2 pt-5 mt-4">
                 <button
                   type="button"
                   disabled
