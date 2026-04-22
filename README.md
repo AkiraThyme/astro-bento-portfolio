@@ -1,73 +1,72 @@
-# ⚡️astro-bento-portfolio
+# Astro Bento Portfolio
 
-## A personal portfolio website made using `Astro`.
+A dark-themed personal portfolio built with Astro, featuring bento-style cards, animated sections, a blog, and a dedicated websites/projects showcase.
 
-![astro-bento-portfolio | Bento-like Personal Porfolio Template](public/preview.png)
+![Project preview](public/preview.png)
 
-To view a demo example, **[click here](https://sparkly-speculoos-0c9197.netlify.app/)**
+## Highlights
 
-or my portfolio **[click here](https://gianmarco.xyz/)**
-
-## Features
-
-- Modern and Minimal bento-like, sleek UI Design
-- All in one page (almost)
-- Fully Responsive
-- Performances and SEO optimizations
-- Ready to be deployed on [Netlify](https://www.netlify.com/)
-- Blog
-- RSS support (your-domain/rss.xml)
-- Cool 3d globe
+- Bento-style responsive layout for landing page content
+- Dedicated Websites page with project cards and visual highlights
+- Blog support with RSS feed
+- Animated UI interactions using Motion
+- Built with Astro and UnoCSS for performance-focused rendering
 
 ## Tech Stack
 
-- [Astro](https://astro.build)
-- [unocss](https://unocss.dev/)
-- [motion](https://motion.dev/)
-- [d3](https://d3js.org/)
+- [Astro](https://astro.build/)
+- [UnoCSS](https://unocss.dev/)
+- [Motion](https://motion.dev/)
+- [D3](https://d3js.org/)
 
-# Steps ▶️
+## Getting Started
 
-```bash
-# Clone this repository
-$ git clone https://github.com/Ladvace/astro-bento-portfolio
-```
+### 1) Clone the repository
 
 ```bash
-# Go into the repository
-$ cd astro-bento-portfolio
+git clone https://github.com/Ladvace/astro-bento-portfolio.git
+cd astro-bento-portfolio
 ```
+
+### 2) Install dependencies (recommended)
+
+To avoid lockfile merge/version mismatch issues, use:
 
 ```bash
-# Install dependencies
-$ pnpm install
-or
-$ npm install
+pnpm install --frozen-lockfile
 ```
+
+### 3) Start development server
 
 ```bash
-# Start the project in development
-$ pnpm run dev
-or
-$ npm run dev
+pnpm run dev
 ```
 
-## REMOVE THE umami analytics script tag (or replace it with your id) in `src/layouts/Layout.astro`
+Open `http://localhost:4321` in your browser.
 
-# Configuration
+## Available Scripts
 
-remember to replace the `site` and other properties with your data in `astro.config.mjs`
+```bash
+pnpm run dev      # start local dev server
+pnpm run build    # build for production
+pnpm run preview  # preview production build
+```
 
-# Deploy on Netlify 🚀
+## Configuration Notes
 
-Deploying your website on Netlify it's optional but I reccomand it in order to deploy it faster and easly.
+- Update site metadata in `astro.config.mjs`.
+- Update personal/project content in:
+  - `src/pages/index.astro`
+  - `src/pages/websites.astro`
+  - `src/lib/websites.ts`
 
-You just need to fork this repo and linking it to your Netlify account.
+## Deployment
 
-or
+You can deploy easily on Netlify or any platform that supports static Astro builds.
 
-[![Netlify Deploy button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Ladvace/astro-bento-portfolio)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Ladvace/astro-bento-portfolio)
 
-## Authors ❤️
+## Credits
 
-- Gianmarco - https://github.com/Ladvace
+- Original template author: [Gianmarco (Ladvace)](https://github.com/Ladvace)
+- Customized portfolio implementation: Jerold Arranzado
