@@ -1,0 +1,82 @@
+---
+import BasicLayout from "../layouts/BasicLayout.astro";
+import { WEBSITE_PROJECTS } from "../lib/websites";
+---
+
+<script>
+  import { timeline, type TimelineDefinition } from "motion";
+  import { loaderAnimation } from "../lib/constants";
+
+  const sequence = [
+    loaderAnimation,
+    [
+      ".website-card",
+      { opacity: [0, 1], y: [24, 0] },
+      { at: "-0.2", duration: 0.45, delay: 0.08 },
+    ],
+  ];
+
+  timeline(sequence as TimelineDefinition);
+</script>
+
+<BasicLayout
+  title="Jerold Arranzado - Websites"
+  description="A curated selection of websites and UI work, with visual highlights and project details."
+  page="websites"
+>
+  <main class="w-full max-w-6xl mx-auto px-4 py-8 md:px-6 md:py-10 text-neutral-100">
+    <a
+      href="/"
+      class="inline-flex text-sm text-white bg-neutral-900 hover:bg-neutral-800 mb-6 px-4 py-2 border border-solid border-neutral-600 rounded-lg"
+      >Back</a
+    >
+
+    <header class="mb-8">
+      <p class="text-xs uppercase tracking-[0.2em] text-neutral-400">Selected Work</p>
+      <h1 class="text-4xl font-bold mt-2">Websites</h1>
+      <p class="text-neutral-300 mt-2 max-w-2xl">
+        A visual collection of projects with emphasis on clean UI, image-forward
+        presentation, and practical UX decisions.
+      </p>
+    </header>
+
+    <section class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        WEBSITE_PROJECTS.map((website) => (
+          <article class="website-card group rounded-xl border border-darkslate-100 bg-darkslate-500 overflow-hidden shadow-lg hover:border-primary-500 transition duration-200">
+            <div class="relative overflow-hidden">
+              {website.featured && (
+                <span class="absolute top-3 left-3 z-10 rounded-full bg-primary-500 text-black text-xs font-bold px-3 py-1">
+                  Highlight
+                </span>
+              )}
+              <img
+                src={website.image}
+                alt={`${website.title} preview`}
+                class="h-44 w-full object-cover transition duration-300 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-4">
+              <h2 class="text-lg font-semibold">{website.title}</h2>
+              <p class="text-sm text-neutral-300 mt-2 leading-relaxed">{website.description}</p>
+              <ul class="flex flex-wrap gap-2 mt-4">
+                {website.tags.map((tag) => (
+                  <li class="text-xs rounded-full border border-neutral-600 px-2.5 py-1 text-neutral-200">
+                    {tag}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href={website.href}
+                class="inline-flex mt-4 text-sm font-semibold text-primary-500 hover:text-primary-400"
+              >
+                View project →
+              </a>
+            </div>
+          </article>
+        ))
+      }
+    </section>
+  </main>
+</BasicLayout>

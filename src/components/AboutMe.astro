@@ -3,30 +3,27 @@ import Card from "./Card/index.astro";
 ---
 
 <Card colSpan="md:col-span-1" rowSpan="md:row-span-6" title="About me">
-  <div class="flex flex-col gap-2">
-    <div class="text-sm font-light">
-      <p>
-        Hi, I'm Jerold, a full stack web developer from Philippines.
-        <br />
-        My primary tools of choice includes:
-      </p>
-      <ul class="list-disc list-inside">
-        <li>JavaScript</li>
-        <li>React</li>
-        <li>PHP</li>
-        <li>Astro</li>
-        <li>TailwindCSS</li>
-        <li>Nodejs</li>
-      </ul>
+  <div class="flex flex-col gap-3 text-sm font-light">
+    <p>
+      I’m a full stack developer who works across frontend and backend, usually
+      building web apps, APIs, and database-driven systems.
+    </p>
+    <p>
+      My core stack includes JavaScript/TypeScript, Node.js + Express, Laravel,
+      MySQL, React, and Astro. I focus on solutions that stay simple, fast, and
+      reliable.
+    </p>
+
+    <div>
+      <p class="m-0 text-gray-400 font-medium">Education</p>
+      <p class="m-0">BS in Information Technology · 2020–2024</p>
+      <p class="m-0">Asian College of Technology</p>
     </div>
-    <p class="text-sm font-light">
-      Beyond coding, I'm passionate about design and illustration.
-      An usual hobbies of mine are reading novels and playing video games.
-    </p>
-    <p class="text-sm font-light">
-      While I have some preferred tools, I always choose the best one for the
-      job, even if it's not on my usual list. My goal is to find the right
-      solution for each project.
-    </p>
+
+    <div>
+      <p class="m-0 text-gray-400 font-medium">Experience</p>
+      <p class="m-0"><b>Full Stack Developer</b> · Cubic Solutions Inc (2025–2026)</p>
+      <p class="m-0"><b>Backend Developer</b> · Proweaver Inc (Jun–Oct 2024)</p>
+    </div>
   </div>
 </Card>
