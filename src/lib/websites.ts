@@ -4,6 +4,8 @@ export interface WebsiteProject {
   href: string;
   image: string;
   tags: string[];
+  codeUrl?: string;
+  siteUrl?: string;
   featured?: boolean;
 }
 
@@ -15,6 +17,8 @@ export const WEBSITE_PROJECTS: WebsiteProject[] = [
     href: "/",
     image: "/images/img1.png",
     tags: ["Astro", "UnoCSS", "Animation"],
+    codeUrl: "https://github.com/AkiraThyme/astro-bento-portfolio",
+    siteUrl: "/",
     featured: true,
   },
   {
@@ -24,37 +28,16 @@ export const WEBSITE_PROJECTS: WebsiteProject[] = [
     href: "/travel",
     image: "/images/img2.png",
     tags: ["D3", "Canvas", "Data Viz"],
+    siteUrl: "/travel",
     featured: true,
   },
   {
-    title: "Clean Dashboard",
+    title: "Websites Gallery",
     description:
-      "Admin-focused layout crafted for readability and efficient workflows.",
-    href: "#",
-    image: "/images/img3.png",
-    tags: ["Dashboard", "UX", "Frontend"],
-  },
-  {
-    title: "Business Landing",
-    description:
-      "Conversion-friendly landing page with responsive sections and clear CTAs.",
-    href: "#",
-    image: "/images/img4.png",
-    tags: ["Marketing", "Responsive", "SEO"],
-  },
-  {
-    title: "SaaS Product Site",
-    description:
-      "Product storytelling with structured content and smooth transitions.",
-    href: "#",
-    image: "/images/img5.png",
-    tags: ["SaaS", "Content", "Branding"],
-  },
-  {
-    title: "E-commerce Module",
-    description: "Feature section for product browsing and checkout-oriented flows.",
-    href: "#",
-    image: "/images/img6.png",
-    tags: ["Commerce", "UI", "Optimization"],
+      "Showcase page for UI snapshots and web work grouped into clean, readable cards.",
+    href: "/websites",
+    image: "/images/img7.png",
+    tags: ["Gallery", "UI", "Responsive"],
+    siteUrl: "/websites",
   },
 ];

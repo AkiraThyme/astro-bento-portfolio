@@ -1,6 +1,7 @@
 ---
 import BasicLayout from "../layouts/BasicLayout.astro";
 import { WEBSITE_PROJECTS } from "../lib/websites";
+import { Icon } from "astro-icon/components";
 ---
 
 <script>
@@ -24,17 +25,17 @@ import { WEBSITE_PROJECTS } from "../lib/websites";
   description="A curated selection of websites and UI work, with visual highlights and project details."
   page="websites"
 >
-  <main class="w-full max-w-6xl mx-auto px-4 py-8 md:px-6 md:py-10 text-neutral-100">
+  <main class="w-full max-w-6xl mx-auto px-4 py-8 md:px-6 md:py-10 text-app-fg">
     <a
       href="/"
-      class="inline-flex text-sm text-white bg-neutral-900 hover:bg-neutral-800 mb-6 px-4 py-2 border border-solid border-neutral-600 rounded-lg"
+      class="inline-flex text-sm bg-app-card hover:opacity-85 mb-6 px-4 py-2 border border-solid border-app-border rounded-lg"
       >Back</a
     >
 
     <header class="mb-8">
-      <p class="text-xs uppercase tracking-[0.2em] text-neutral-400">Selected Work</p>
+      <p class="text-xs uppercase tracking-[0.2em] text-app-muted">Selected Work</p>
       <h1 class="text-4xl font-bold mt-2">Websites</h1>
-      <p class="text-neutral-300 mt-2 max-w-2xl">
+      <p class="text-app-muted mt-2 max-w-2xl">
         A visual collection of projects with emphasis on clean UI, image-forward
         presentation, and practical UX decisions.
       </p>
@@ -43,7 +44,7 @@ import { WEBSITE_PROJECTS } from "../lib/websites";
     <section class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {
         WEBSITE_PROJECTS.map((website) => (
-          <article class="website-card group rounded-xl border border-darkslate-100 bg-darkslate-500 overflow-hidden shadow-lg hover:border-primary-500 transition duration-200">
+          <article class="website-card group rounded-xl border border-app-border bg-app-card overflow-hidden shadow-lg hover:border-primary-500 transition duration-200">
             <div class="relative overflow-hidden">
               {website.featured && (
                 <span class="absolute top-3 left-3 z-10 rounded-full bg-primary-500 text-black text-xs font-bold px-3 py-1">
@@ -59,20 +60,42 @@ import { WEBSITE_PROJECTS } from "../lib/websites";
             </div>
             <div class="p-4">
               <h2 class="text-lg font-semibold">{website.title}</h2>
-              <p class="text-sm text-neutral-300 mt-2 leading-relaxed">{website.description}</p>
+              <p class="text-sm text-app-muted mt-2 leading-relaxed">{website.description}</p>
               <ul class="flex flex-wrap gap-2 mt-4">
                 {website.tags.map((tag) => (
-                  <li class="text-xs rounded-full border border-neutral-600 px-2.5 py-1 text-neutral-200">
+                  <li class="text-xs rounded-full border border-app-border px-2.5 py-1 text-app-muted">
                     {tag}
                   </li>
                 ))}
               </ul>
-              <a
-                href={website.href}
-                class="inline-flex mt-4 text-sm font-semibold text-primary-500 hover:text-primary-400"
-              >
-                View project →
-              </a>
+              <div class="mt-4 flex gap-2">
+                <a
+                  href={website.codeUrl || "#"}
+                  target={website.codeUrl ? "_blank" : undefined}
+                  aria-disabled={!website.codeUrl}
+                  class={`inline-flex items-center gap-2 rounded-md border px-3 py-2 text-sm font-semibold transition ${
+                    website.codeUrl
+                      ? "border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-black"
+                      : "cursor-not-allowed border-neutral-500 text-neutral-400 bg-neutral-800/40"
+                  }`}
+                >
+                  <Icon name={website.codeUrl ? "ri:github-fill" : "ri:lock-line"} class="h-4 w-4" />
+                  Code
+                </a>
+                <a
+                  href={website.siteUrl || "#"}
+                  target={website.siteUrl?.startsWith("http") ? "_blank" : undefined}
+                  aria-disabled={!website.siteUrl}
+                  class={`inline-flex items-center gap-2 rounded-md border px-3 py-2 text-sm font-semibold transition ${
+                    website.siteUrl
+                      ? "border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-black"
+                      : "cursor-not-allowed border-neutral-500 text-neutral-400 bg-neutral-800/40"
+                  }`}
+                >
+                  <Icon name={website.siteUrl ? "ri:global-line" : "ri:lock-line"} class="h-4 w-4" />
+                  Site
+                </a>
+              </div>
             </div>
           </article>
         ))
