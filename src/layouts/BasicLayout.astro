@@ -2,7 +2,7 @@
 interface Props {
   title: string;
   description: string;
-  page?: "travel" | "blog";
+  page?: "travel" | "blog" | "websites";
   slug?: string | undefined;
   frontmatter?: {
     file: string;
@@ -18,8 +18,10 @@ interface Props {
 const { title, description, page, slug, frontmatter } = Astro.props;
 const image =
   page === "travel"
-    ? `${Astro.url.origin}/globe_preview.webp"`
-    : `${Astro.url.origin}/og-image.png`;
+    ? `${Astro.url.origin}/globe_preview.webp`
+    : page === "websites"
+      ? `${Astro.url.origin}/images/img1.png`
+      : `${Astro.url.origin}/og-image.png`;
 
 const schema =
   page !== "blog"
