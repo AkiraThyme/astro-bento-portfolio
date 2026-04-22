@@ -4,57 +4,36 @@ export interface WebsiteProject {
   href: string;
   image: string;
   tags: string[];
+  codeUrl?: string;
+  siteUrl?: string;
   featured?: boolean;
 }
 
 export const WEBSITE_PROJECTS: WebsiteProject[] = [
   {
-    title: "Portfolio & Bento UI",
+    title: "Antasis Web Based Payroll",
     description:
-      "Personal site focused on polished UI micro-interactions and performance.",
-    href: "/",
+      "Payroll management platform focused on employee records, attendance, and salary workflows.",
+    href: "/websites",
     image: "/images/img1.png",
-    tags: ["Astro", "UnoCSS", "Animation"],
+    tags: ["React", "MySQL"],
     featured: true,
   },
   {
-    title: "Travel Globe",
+    title: "Customized AI IS Chat bot",
     description:
-      "Interactive 3D globe experience showing countries I visited.",
-    href: "/travel",
+      "Internal support chatbot with AI-assisted replies, intent routing, and admin-friendly controls.",
+    href: "/websites",
     image: "/images/img2.png",
-    tags: ["D3", "Canvas", "Data Viz"],
+    tags: ["Python", "Laravel", "LLM GPT AI"],
     featured: true,
   },
   {
-    title: "Clean Dashboard",
+    title: "Simple CRUD",
     description:
-      "Admin-focused layout crafted for readability and efficient workflows.",
-    href: "#",
-    image: "/images/img3.png",
-    tags: ["Dashboard", "UX", "Frontend"],
-  },
-  {
-    title: "Business Landing",
-    description:
-      "Conversion-friendly landing page with responsive sections and clear CTAs.",
-    href: "#",
-    image: "/images/img4.png",
-    tags: ["Marketing", "Responsive", "SEO"],
-  },
-  {
-    title: "SaaS Product Site",
-    description:
-      "Product storytelling with structured content and smooth transitions.",
-    href: "#",
-    image: "/images/img5.png",
-    tags: ["SaaS", "Content", "Branding"],
-  },
-  {
-    title: "E-commerce Module",
-    description: "Feature section for product browsing and checkout-oriented flows.",
-    href: "#",
-    image: "/images/img6.png",
-    tags: ["Commerce", "UI", "Optimization"],
+      "Clean CRUD application for daily business data management with straightforward UX and validation.",
+    href: "/websites",
+    image: "/images/img7.png",
+    tags: ["Laravel"],
   },
 ];
