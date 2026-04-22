@@ -40,10 +40,10 @@ import { WEBSITE_PROJECTS } from "../lib/websites";
       </p>
     </header>
 
-    <section class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 items-stretch auto-rows-fr">
+    <section class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {
         WEBSITE_PROJECTS.map((website) => (
-          <article class="website-card group flex h-full flex-col rounded-xl border border-app-border bg-app-card overflow-hidden shadow-lg transition duration-300 hover:-translate-y-1 hover:border-primary-500 hover:shadow-primary-500/10">
+          <article class="website-card group flex h-[36rem] flex-col rounded-xl border border-app-border bg-app-card overflow-hidden shadow-lg transition duration-300 hover:-translate-y-1 hover:border-primary-500 hover:shadow-primary-500/10 sm:h-[34rem]">
             <div class="relative overflow-hidden">
               {website.featured && (
                 <span class="absolute top-3 left-3 z-10 rounded-full bg-primary-500 text-black text-xs font-bold px-3 py-1">
@@ -59,12 +59,12 @@ import { WEBSITE_PROJECTS } from "../lib/websites";
             </div>
 
             <div class="flex h-full flex-col p-4">
-              <h2 class="text-lg font-semibold leading-snug line-clamp-2 min-h-[3.5rem]">{website.title}</h2>
-              <p class="text-sm text-app-muted mt-2 leading-relaxed line-clamp-3 min-h-[4.5rem]">
+              <h2 class="text-lg font-semibold leading-snug line-clamp-2">{website.title}</h2>
+              <p class="text-sm text-app-muted mt-2 leading-relaxed line-clamp-3">
                 {website.description}
               </p>
 
-              <ul class="flex flex-wrap gap-2 mt-4">
+              <ul class="flex flex-wrap gap-2 mt-4 max-h-[4.5rem] overflow-hidden">
                 {website.tags.map((tag) => (
                   <li class="text-xs rounded-full border border-app-border px-2.5 py-1 text-app-muted">
                     {tag}
@@ -72,21 +72,45 @@ import { WEBSITE_PROJECTS } from "../lib/websites";
                 ))}
               </ul>
 
-              <div class="mt-5 grid grid-cols-2 gap-2 pt-1">
+              <div class="mt-auto grid grid-cols-2 gap-2 pt-5">
                 <button
                   type="button"
                   disabled
                   aria-label="Code unavailable"
-                  class="inline-flex items-center justify-center rounded-md border border-red-500/60 px-3 py-2 text-sm font-semibold text-red-400 bg-red-500/10 cursor-not-allowed"
+                  class="inline-flex items-center justify-center gap-1.5 rounded-md border border-red-500 px-3 py-2 text-sm font-semibold text-red-300 bg-red-500/5 cursor-not-allowed"
                 >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    class="h-4 w-4"
+                    aria-hidden="true"
+                  >
+                    <rect x="4.5" y="10.5" width="15" height="9" rx="2" />
+                    <path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" />
+                  </svg>
                   Code
                 </button>
                 <button
                   type="button"
                   disabled
                   aria-label="Site unavailable"
-                  class="inline-flex items-center justify-center rounded-md border border-green-500/60 px-3 py-2 text-sm font-semibold text-green-400 bg-green-500/10 cursor-not-allowed"
+                  class="inline-flex items-center justify-center gap-1.5 rounded-md border border-green-500 px-3 py-2 text-sm font-semibold text-green-300 bg-green-500/5 cursor-not-allowed"
                 >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    class="h-4 w-4"
+                    aria-hidden="true"
+                  >
+                    <rect x="4.5" y="10.5" width="15" height="9" rx="2" />
+                    <path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" />
+                  </svg>
                   Site
                 </button>
               </div>
