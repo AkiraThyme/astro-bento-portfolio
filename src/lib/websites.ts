@@ -47,4 +47,13 @@ export const WEBSITE_PROJECTS: WebsiteProject[] = [
     tags: ["Laravel"],
     featured: true,
   },
+  {
+    title: "Simple Weather",
+    description:
+      "A lightweight weather web app that delivers current conditions and quick forecasts through a clean, responsive interface designed for fast everyday checking.",
+    href: "/websites",
+    image: "/images/Img13.jpg",
+    tags: ["Nuxt", "Tailwind CSS", "SCSS", "Weather API"],
+    featured: true,
+  },
 ];
