@@ -11,6 +11,16 @@ export interface WebsiteProject {
 
 export const WEBSITE_PROJECTS: WebsiteProject[] = [
   {
+    title: "DropLog",
+    description:
+      "DropLog is a modern micro journaling app built for speed, simplicity, and self-awareness. Log your thoughts in seconds, track your moods over time, and discover patterns in your daily life — all without creating an account or relying on the cloud.",
+    href: "/websites",
+    image: "/images/Img15.png",
+    tags: ["Vue 3", "TypeScript", "Pinia", "CapacitorJS", "IndexedDB"],
+    siteUrl: "https://drop-log.netlify.app/",
+    featured: true,
+  },
+  {
     title: "Antasis Web Based Payroll",
     description:
       "Payroll management platform with role-based workflows and streamlined employee records.",

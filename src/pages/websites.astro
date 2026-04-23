@@ -73,46 +73,69 @@ import { WEBSITE_PROJECTS } from "../lib/websites";
               </ul>
 
               <div class="grid grid-cols-2 gap-2 pt-5 mt-4">
-                <button
-                  type="button"
-                  disabled
-                  aria-label="Code unavailable"
-                  class="inline-flex items-center justify-center gap-1.5 rounded-md border border-red-500 px-3 py-2 text-sm font-semibold text-red-300 bg-red-500/5 cursor-not-allowed"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                    class="h-4 w-4"
-                    aria-hidden="true"
+                {website.codeUrl ? (
+                  <a
+                    href={website.codeUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    class="inline-flex items-center justify-center gap-1.5 rounded-md border border-red-500 px-3 py-2 text-sm font-semibold text-red-300 bg-red-500/10 transition hover:bg-red-500/20"
                   >
-                    <rect x="4.5" y="10.5" width="15" height="9" rx="2" />
-                    <path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" />
-                  </svg>
-                  Code
-                </button>
-                <button
-                  type="button"
-                  disabled
-                  aria-label="Site unavailable"
-                  class="inline-flex items-center justify-center gap-1.5 rounded-md border border-green-500 px-3 py-2 text-sm font-semibold text-green-300 bg-green-500/5 cursor-not-allowed"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                    class="h-4 w-4"
-                    aria-hidden="true"
+                    Code
+                  </a>
+                ) : (
+                  <button
+                    type="button"
+                    disabled
+                    aria-label="Code unavailable"
+                    class="inline-flex items-center justify-center gap-1.5 rounded-md border border-red-500 px-3 py-2 text-sm font-semibold text-red-300 bg-red-500/5 cursor-not-allowed"
                   >
-                    <rect x="4.5" y="10.5" width="15" height="9" rx="2" />
-                    <path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" />
-                  </svg>
-                  Site
-                </button>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      class="h-4 w-4"
+                      aria-hidden="true"
+                    >
+                      <rect x="4.5" y="10.5" width="15" height="9" rx="2" />
+                      <path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" />
+                    </svg>
+                    Code
+                  </button>
+                )}
+
+                {website.siteUrl ? (
+                  <a
+                    href={website.siteUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    class="inline-flex items-center justify-center gap-1.5 rounded-md border border-green-500 px-3 py-2 text-sm font-semibold text-green-300 bg-green-500/10 transition hover:bg-green-500/20"
+                  >
+                    Site
+                  </a>
+                ) : (
+                  <button
+                    type="button"
+                    disabled
+                    aria-label="Site unavailable"
+                    class="inline-flex items-center justify-center gap-1.5 rounded-md border border-green-500 px-3 py-2 text-sm font-semibold text-green-300 bg-green-500/5 cursor-not-allowed"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      class="h-4 w-4"
+                      aria-hidden="true"
+                    >
+                      <rect x="4.5" y="10.5" width="15" height="9" rx="2" />
+                      <path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" />
+                    </svg>
+                    Site
+                  </button>
+                )}
               </div>
             </div>
           </article>
