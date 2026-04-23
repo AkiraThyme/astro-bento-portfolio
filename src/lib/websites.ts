@@ -54,6 +54,7 @@ export const WEBSITE_PROJECTS: WebsiteProject[] = [
     href: "/websites",
     image: "/images/Img13.jpg",
     tags: ["Nuxt", "Tailwind CSS", "SCSS", "Weather API"],
+    siteUrl: "https://nuxt-weather-dashboard.vercel.app/",
     featured: true,
   },
 ];
