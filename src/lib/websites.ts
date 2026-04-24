@@ -21,6 +21,27 @@ export const WEBSITE_PROJECTS: WebsiteProject[] = [
     featured: true,
   },
   {
+    title: "FlowState",
+    description:
+      "FlowState is a developer productivity web app designed for deep work, combining task management, focus session tracking, blocker logging, quick notes, and real-time persistence in one keyboard-first workflow.",
+    href: "/websites",
+    image: "/preview.png",
+    tags: [
+      "React",
+      "Vite",
+      "TypeScript",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Zustand",
+      "Supabase",
+      "Google OAuth",
+      "Netlify",
+      "Zod",
+    ],
+    siteUrl: "https://devflowstate.netlify.app/",
+    featured: true,
+  },
+  {
     title: "Antasis Web Based Payroll",
     description:
       "Payroll management platform with role-based workflows and streamlined employee records.",
