@@ -73,12 +73,15 @@ import { WEBSITE_PROJECTS } from "../lib/websites";
                 {website.tags.length > 6 && (
                   <li class="relative group/others text-xs rounded-full border border-app-border px-2.5 py-1 text-app-muted cursor-help">
                     {website.tags.length - 6} others
-                    <span class="pointer-events-none absolute left-0 top-full z-20 mt-1 hidden w-52 max-w-[16rem] whitespace-normal break-words rounded-md border border-app-border bg-app-card px-2 py-1.5 text-xs text-app-fg shadow-lg group-hover/others:block">
+                    <span class="pointer-events-none absolute bottom-full left-0 z-20 mb-2 hidden w-max max-w-[14rem] rounded-md border border-app-border bg-app-card px-2 py-1.5 text-xs text-app-fg shadow-lg group-hover/others:block">
                       {website.tags.slice(6).join(", ")}
                     </span>
                   </li>
                 )}
               </ul>
+              {website.tags.length > 8 && (
+                <p class="mt-1 text-xs text-app-muted">...</p>
+              )}
 
               <div class="grid grid-cols-2 gap-2 pt-3 mt-auto">
                 {website.codeUrl ? (
