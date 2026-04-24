@@ -25,7 +25,7 @@ export const WEBSITE_PROJECTS: WebsiteProject[] = [
     description:
       "FlowState is a developer productivity web app designed for deep work, combining task management, focus session tracking, blocker logging, quick notes, and real-time persistence in one keyboard-first workflow.",
     href: "/websites",
-    image: "/preview.png",
+    image: "/images/Img16.png",
     tags: [
       "React",
       "Vite",
