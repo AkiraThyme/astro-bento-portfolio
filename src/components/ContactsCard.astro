@@ -3,20 +3,20 @@ import Card from "./Card/index.astro";
 import { LINKS } from "../lib/constants";
 ---
 
-<Card colSpan="md:col-span-1" rowSpan="md:row-span-4">
-  <div class="h-full">
+<Card colSpan="md:col-span-1" rowSpan="md:row-span-2 lg:row-span-3">
+  <div class="h-full space-y-3">
     <header class="flex items-center">
-      <h1 class="text-white text-xl font-bold">Let's start working together!</h1>
+      <h1 class="text-white text-lg md:text-xl font-bold">Let's start working together!</h1>
     </header>
-    <address class="flex flex-col mt-4 not-italic">
-      <h2 class="text-gray-500">Contact Details</h2>
-      <p>0991-297-2644</p>
-      <p>jerold.arranzado30@gmail.com</p>
-      <p>Cebu City, Philippines</p>
+    <address class="flex flex-col gap-1 not-italic">
+      <h2 class="text-gray-500 m-0">Contact Details</h2>
+      <p class="m-0">0991-297-2644</p>
+      <p class="m-0 break-all">jerold.arranzado30@gmail.com</p>
+      <p class="m-0">Cebu City, Philippines</p>
     </address>
-    <div class="flex flex-col mt-4 w-fit">
-      <h2 class="text-gray-500">Socials</h2>
-      <ul>
+    <div class="flex flex-col w-fit">
+      <h2 class="text-gray-500 m-0">Socials</h2>
+      <ul class="m-0 pl-4 space-y-1">
         <li>
           <a href={LINKS.linkedin} target="_blank">LinkedIn</a>
         </li>

@@ -24,14 +24,14 @@ import { WEBSITE_PROJECTS } from "../lib/websites";
   description="A curated selection of websites and UI work, with visual highlights and project details."
   page="websites"
 >
-  <main class="w-full max-w-6xl mx-auto px-4 py-8 md:px-6 md:py-10 text-app-fg">
+  <main class="w-full max-w-6xl mx-auto px-4 py-7 md:px-6 md:py-8 text-app-fg">
     <a
       href="/"
       class="inline-flex text-sm bg-app-card hover:opacity-85 mb-6 px-4 py-2 border border-solid border-app-border rounded-lg"
       >Back</a
     >
 
-    <header class="mb-8">
+    <header class="mb-6">
       <p class="text-xs uppercase tracking-[0.2em] text-app-muted">Selected Work</p>
       <h1 class="text-3xl sm:text-4xl font-bold mt-2">Websites</h1>
       <p class="text-app-muted mt-2 max-w-2xl">
@@ -40,7 +40,7 @@ import { WEBSITE_PROJECTS } from "../lib/websites";
       </p>
     </header>
 
-    <section class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 items-start">
+    <section class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 items-start">
       {
         WEBSITE_PROJECTS.map((website) => (
           <article class="website-card group flex h-full flex-col rounded-xl border border-app-border bg-app-card overflow-hidden shadow-lg transition duration-300 hover:-translate-y-1 hover:border-primary-500 hover:shadow-primary-500/10">
@@ -53,18 +53,18 @@ import { WEBSITE_PROJECTS } from "../lib/websites";
               <img
                 src={website.image}
                 alt={`${website.title} preview`}
-                class="h-44 w-full object-cover transition duration-500 group-hover:scale-105"
+                class="h-40 w-full object-cover transition duration-500 group-hover:scale-105"
                 loading="lazy"
               />
             </div>
 
-            <div class="flex flex-1 flex-col p-4">
+            <div class="flex flex-1 flex-col p-3.5">
               <h2 class="text-lg font-semibold leading-snug line-clamp-2">{website.title}</h2>
-              <p class="text-sm text-app-muted mt-2 leading-relaxed line-clamp-3">
+              <p class="text-sm text-app-muted mt-1.5 leading-relaxed line-clamp-3">
                 {website.description}
               </p>
 
-              <ul class="flex flex-wrap gap-2 mt-4 max-h-[4.5rem] overflow-hidden">
+              <ul class="flex flex-wrap gap-1.5 mt-3 max-h-[4.5rem] overflow-hidden">
                 {website.tags.map((tag) => (
                   <li class="text-xs rounded-full border border-app-border px-2.5 py-1 text-app-muted">
                     {tag}
@@ -72,7 +72,7 @@ import { WEBSITE_PROJECTS } from "../lib/websites";
                 ))}
               </ul>
 
-              <div class="grid grid-cols-2 gap-2 pt-5 mt-4">
+              <div class="grid grid-cols-2 gap-2 pt-3 mt-3">
                 {website.codeUrl ? (
                   <a
                     href={website.codeUrl}
