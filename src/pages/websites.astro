@@ -64,12 +64,20 @@ import { WEBSITE_PROJECTS } from "../lib/websites";
                 {website.description}
               </p>
 
-              <ul class="flex flex-wrap gap-1.5 mt-3 max-h-[4.5rem] overflow-hidden">
-                {website.tags.map((tag) => (
+              <ul class="flex flex-wrap gap-1.5 mt-3">
+                {website.tags.slice(0, 6).map((tag) => (
                   <li class="text-xs rounded-full border border-app-border px-2.5 py-1 text-app-muted">
                     {tag}
                   </li>
                 ))}
+                {website.tags.length > 6 && (
+                  <li class="relative group/others text-xs rounded-full border border-app-border px-2.5 py-1 text-app-muted cursor-help">
+                    {website.tags.length - 6} others
+                    <span class="pointer-events-none absolute bottom-full left-0 z-20 mb-2 hidden w-max max-w-[14rem] rounded-md border border-app-border bg-app-card px-2 py-1.5 text-xs text-app-fg shadow-lg group-hover/others:block">
+                      {website.tags.slice(6).join(", ")}
+                    </span>
+                  </li>
+                )}
               </ul>
               {website.tags.length > 8 && (
                 <p class="mt-1 text-xs text-app-muted">...</p>
