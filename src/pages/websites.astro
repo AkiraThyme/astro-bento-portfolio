@@ -60,19 +60,27 @@ import { WEBSITE_PROJECTS } from "../lib/websites";
 
             <div class="flex flex-1 flex-col p-3.5">
               <h2 class="text-lg font-semibold leading-snug line-clamp-2">{website.title}</h2>
-              <p class="text-sm text-app-muted mt-1.5 leading-relaxed line-clamp-3">
+              <p class="text-sm text-app-muted mt-1.5 leading-relaxed line-clamp-3 min-h-[4.5rem]">
                 {website.description}
               </p>
 
-              <ul class="flex flex-wrap gap-1.5 mt-3 max-h-[4.5rem] overflow-hidden">
-                {website.tags.map((tag) => (
+              <ul class="flex flex-wrap gap-1.5 mt-3">
+                {website.tags.slice(0, 6).map((tag) => (
                   <li class="text-xs rounded-full border border-app-border px-2.5 py-1 text-app-muted">
                     {tag}
                   </li>
                 ))}
+                {website.tags.length > 6 && (
+                  <li class="relative group/others text-xs rounded-full border border-app-border px-2.5 py-1 text-app-muted cursor-help">
+                    {website.tags.length - 6} others
+                    <span class="pointer-events-none absolute left-0 top-full z-20 mt-1 hidden w-52 max-w-[16rem] whitespace-normal break-words rounded-md border border-app-border bg-app-card px-2 py-1.5 text-xs text-app-fg shadow-lg group-hover/others:block">
+                      {website.tags.slice(6).join(", ")}
+                    </span>
+                  </li>
+                )}
               </ul>
 
-              <div class="grid grid-cols-2 gap-2 pt-3 mt-3">
+              <div class="grid grid-cols-2 gap-2 pt-3 mt-auto">
                 {website.codeUrl ? (
                   <a
                     href={website.codeUrl}
