@@ -78,4 +78,15 @@ export const WEBSITE_PROJECTS: WebsiteProject[] = [
     siteUrl: "https://nuxt-weather-dashboard.vercel.app/",
     featured: true,
   },
+  {
+    title: "QueryWeave",
+    description:
+      "QueryWeave is a lightweight Django toolkit for building reusable, ORM-powered reports with filtering, grouping, aggregations, and export support.",
+    href: "/websites",
+    image: "/images/img18.jpg",
+    tags: ["Python", "Django", "PyTest"],
+    codeUrl: "https://github.com/AkiraThyme/query-weave",
+    siteUrl: "https://akirathyme.github.io/query-weave/",
+    featured: true,
+  },
 ];
